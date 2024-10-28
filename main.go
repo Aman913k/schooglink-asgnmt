@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	// Load environment variables from .env file
+	// Loading environment variables from .env 
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file: ", err)
@@ -20,7 +20,7 @@ func main() {
 	mongoURI := os.Getenv("MONGO_URI")
 	if mongoURI == "" {
 		log.Println("Warning: MONGO_URI not set, using default MongoDB URI")
-		mongoURI = "mongodb://localhost:27017" // Set your default URI here if needed
+		mongoURI = "mongodb://localhost:27017" 
 	}
 
 	jwtSecret := os.Getenv("JWT_SECRET")
@@ -28,7 +28,6 @@ func main() {
 		log.Fatal("Error: JWT_SECRET environment variable is required")
 	}
 
-	// Continue with application setup...
 	log.Println("Mongo URI:", mongoURI)
 	log.Println("JWT Secret loaded successfully.")
 
